@@ -1,31 +1,37 @@
 "use client";
 
 import {
-  Box,
-  Flex,
-  Text,
-  IconButton,
-  Button,
-  Stack,
-  Collapse,
-  Icon,
-  Popover,
-  PopoverTrigger,
-  PopoverContent,
-  useColorModeValue,
-  useBreakpointValue,
-  useDisclosure,
-} from "@chakra-ui/react";
-import {
-  HamburgerIcon,
-  CloseIcon,
+  ArrowRightIcon,
   ChevronDownIcon,
   ChevronRightIcon,
+  CloseIcon,
+  HamburgerIcon,
 } from "@chakra-ui/icons";
+import {
+  Box,
+  Button,
+  Collapse,
+  Flex,
+  Heading,
+  Icon,
+  IconButton,
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+  Stack,
+  Text,
+  useBreakpointValue,
+  useColorMode,
+  useColorModeValue,
+  useDisclosure,
+} from "@chakra-ui/react";
+import { RiGithubFill, RiGithubLine } from "react-icons/ri";
+import { GITHUB_REPO } from "../../../constants";
 import ThemeToggle from "./ThemeToggle";
 
 export default function Header() {
   const { isOpen, onToggle } = useDisclosure();
+  const { colorMode, toggleColorMode } = useColorMode();
 
   return (
     <Box>
@@ -60,7 +66,9 @@ export default function Header() {
             fontFamily={"heading"}
             color={useColorModeValue("gray.800", "white")}
           >
-            Logo
+            <Heading as="h1" size="lg">
+              🛒 Aucto
+            </Heading>
           </Text>
 
           <Flex display={{ base: "none", md: "flex" }} ml={10}>
@@ -75,28 +83,17 @@ export default function Header() {
           spacing={6}
         >
           <ThemeToggle />
+          <IconButton
+            aria-label="open github"
+            icon={colorMode === "light" ? <RiGithubFill /> : <RiGithubLine />}
+            onClick={() => open(GITHUB_REPO, "_blank")}
+          />
           <Button
-            as={"a"}
-            fontSize={"sm"}
-            fontWeight={400}
-            variant={"link"}
-            href={"#"}
+            rightIcon={<ArrowRightIcon />}
+            colorScheme="pink"
+            variant="solid"
           >
-            Sign In
-          </Button>
-          <Button
-            as={"a"}
-            display={{ base: "none", md: "inline-flex" }}
-            fontSize={"sm"}
-            fontWeight={600}
-            color={"white"}
-            bg={"pink.400"}
-            href={"#"}
-            _hover={{
-              bg: "pink.300",
-            }}
-          >
-            Sign Up
+            Login
           </Button>
         </Stack>
       </Flex>
@@ -272,41 +269,15 @@ interface NavItem {
 
 const NAV_ITEMS: Array<NavItem> = [
   {
-    label: "Inspiration",
-    children: [
-      {
-        label: "Explore Design Work",
-        subLabel: "Trending Design to inspire you",
-        href: "#",
-      },
-      {
-        label: "New & Noteworthy",
-        subLabel: "Up-and-coming Designers",
-        href: "#",
-      },
-    ],
+    label: "Home",
+    href: "/",
   },
   {
-    label: "Find Work",
-    children: [
-      {
-        label: "Job Board",
-        subLabel: "Find your dream design job",
-        href: "#",
-      },
-      {
-        label: "Freelance Projects",
-        subLabel: "An exclusive list for contract work",
-        href: "#",
-      },
-    ],
+    label: "About",
+    href: "/about",
   },
   {
-    label: "Learn Design",
-    href: "#",
-  },
-  {
-    label: "Hire Designers",
-    href: "#",
+    label: "Auctions",
+    href: "/auctions",
   },
 ];

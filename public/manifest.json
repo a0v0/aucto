@@ -1,6 +1,6 @@
 {
-  "short_name": "nextarter-chakra",
-  "name": "Next.js App Template",
+  "short_name": "Aucto",
+  "name": "Online auction site 🛒 built with Next.js ⚛️, ChakraUI 💅",
   "lang": "en",
   "start_url": "/",
   "background_color": "#FFFFFF",
