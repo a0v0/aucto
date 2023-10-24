@@ -1,8 +1,8 @@
 {
-  "name": "nextarter-chakra",
+  "name": "aucto",
   "version": "0.1.0",
   "private": true,
-  "author": "sozonome",
+  "author": "av",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -16,12 +16,10 @@
     "test:e2e": "playwright test",
     "format": "prettier --write src",
     "up-interactive": "pnpm up -i",
-    "up-latest": "pnpm up-interactive -L",
-    "release": "cross-env HUSKY=0 standard-version",
-    "push-release": "git push --follow-tags origin main",
-    "prepare": "husky install"
+    "up-latest": "pnpm up-interactive -L"
   },
   "dependencies": {
+    "@chakra-ui/icons": "^2.1.1",
     "@chakra-ui/next-js": "^2.1.5",
     "@chakra-ui/react": "^2.8.1",
     "@emotion/react": "^11.11.1",
@@ -44,7 +42,6 @@
     "eslint": "^8.51.0",
     "eslint-config-next": "^13.5.4",
     "eslint-config-sznm": "^2.0.2",
-    "husky": "^8.0.3",
     "lint-staged": "^14.0.1",
     "next-sitemap": "^4.2.3",
     "prettier": "^3.0.3",

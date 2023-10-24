@@ -1,0 +1,14 @@
+version: 3
+tasks:
+  default:
+    cmds:
+      - task -a
+  install:
+    desc: Install Dependencies
+    cmds:
+      - pnpm install
+
+  start:
+    desc: Start the server
+    cmds:
+      - pnpm dev

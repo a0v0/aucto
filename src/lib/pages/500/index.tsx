@@ -7,10 +7,10 @@ import {
   Link as ChakraLink,
   useColorMode,
   Flex,
-} from '@chakra-ui/react';
-import Link from 'next/link';
+} from "@chakra-ui/react";
+import Link from "next/link";
 
-import MotionBox from '~/lib/components/motion/Box';
+import MotionBox from "~/lib/components/motion/Box";
 
 const Page500 = () => {
   const { colorMode } = useColorMode();
@@ -19,8 +19,8 @@ const Page500 = () => {
     <Flex minHeight="70vh" direction="column" justifyContent="center">
       <MotionBox
         animate={{ y: 20 }}
-        transition={{ repeat: Infinity, duration: 2, repeatType: 'reverse' }}
-        width={{ base: '100%', sm: '70%', md: '60%' }}
+        transition={{ repeat: Infinity, duration: 2, repeatType: "reverse" }}
+        width={{ base: "100%", sm: "70%", md: "60%" }}
         margin="0 auto"
       >
         <Image
@@ -28,15 +28,6 @@ const Page500 = () => {
           alt="Error 500 Illustration"
         />
       </MotionBox>
-      <Text textAlign="center" fontSize="xs" color="gray">
-        <ChakraLink
-          href="https://stories.freepik.com/web"
-          isExternal
-          rel="noopener noreferrer"
-        >
-          Illustration by Freepik Stories
-        </ChakraLink>
-      </Text>
 
       <Box marginY={4}>
         <Heading textAlign="center" size="lg">
@@ -47,10 +38,10 @@ const Page500 = () => {
           <Button
             as={Link}
             href="/"
-            backgroundColor={colorMode === 'light' ? 'gray.300' : 'teal.500'}
+            backgroundColor={colorMode === "light" ? "gray.300" : "teal.500"}
             size="sm"
           >
-            Let&apos;s Head Back
+            Go Back
           </Button>
         </Box>
       </Box>
