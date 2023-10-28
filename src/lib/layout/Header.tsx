@@ -73,7 +73,7 @@ export default function Header() {
         <Flex flex={{ base: 1 }} justify={{ base: "center", md: "start" }}>
           <Flex display={{ base: "none", md: "flex" }} ml={10}>
             <Link href={"/"}>
-              <Heading as="h1" size="lg" mr={"4"}>
+              <Heading as="h1" color={"black"} size="lg" mr={"4"}>
                 🛒 Aucto
               </Heading>
             </Link>
