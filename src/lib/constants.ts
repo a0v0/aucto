@@ -1,4 +1,4 @@
-import { ProductDetailsProps } from "./components/ProductDetails";
+import { ProductDetailsProps } from "app/components/ProductDetails";
 
 export const APP_NAME = "Aucto";
 export const GITHUB_REPO = "https://github.com/a0v0/aucto";
@@ -7,6 +7,7 @@ export const SITE_URL = "https://aucto-site.vercel.app/";
 export const BidData: ProductDetailsProps[] = [
   {
     images: ["/drone1.png"],
+    slug: "1",
     name: "4K Dual Camera Foldable Toy Drones",
     currentBid: "14,750",
     endsInHours: 5,

@@ -10,6 +10,7 @@ export interface ProductDetailsProps {
   totalBids: number;
   //   key value pair for details
   details: Record<string, string>;
+  slug: string;
 }
 
 function ProductDetails() {

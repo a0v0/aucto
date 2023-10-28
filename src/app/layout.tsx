@@ -1,7 +1,7 @@
-import type { Metadata } from "next";
-
 import Layout from "lib/layout";
+import type { Metadata } from "next";
 import { APP_NAME, SITE_URL } from "../lib/constants";
+import "./global.css";
 import Providers from "./providers";
 
 export const metadata: Metadata = {

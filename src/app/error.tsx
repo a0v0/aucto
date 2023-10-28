@@ -7,7 +7,7 @@ import {
   Image,
   useColorMode,
 } from "@chakra-ui/react";
-import MotionBox from "lib/components/motion/Box";
+import MotionBox from "./components/motion/Box";
 import Link from "next/link";
 
 const Page500 = () => {

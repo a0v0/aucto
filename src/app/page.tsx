@@ -1,6 +1,6 @@
 import { Flex, SimpleGrid } from "@chakra-ui/react";
-import BidCard from "lib/components/BidCard";
 import { BidData } from "lib/constants";
+import BidCard from "./components/BidCard";
 
 const Home = () => {
   return (

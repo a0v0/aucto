@@ -8,9 +8,10 @@ import {
   Image,
   useColorMode,
 } from "@chakra-ui/react";
-import MotionBox from "lib/components/motion/Box";
+
 import { Metadata } from "next";
 import Link from "next/link";
+import MotionBox from "./components/motion/Box";
 
 export const metadata: Metadata = {
   title: "404 Not Found",
