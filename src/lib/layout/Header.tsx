@@ -38,7 +38,7 @@ export default function Header() {
     <Box>
       <Flex
         bg={useColorModeValue("white", "gray.800")}
-        color={useColorModeValue("gray.600", "white")}
+        // color={useColorModeValue("gray.600", "white")}
         minH={"60px"}
         py={{ base: 2 }}
         px={{ base: 4 }}
@@ -73,7 +73,7 @@ export default function Header() {
         <Flex flex={{ base: 1 }} justify={{ base: "center", md: "start" }}>
           <Flex display={{ base: "none", md: "flex" }} ml={10}>
             <Link href={"/"}>
-              <Heading as="h1" color={"black"} size="lg" mr={"4"}>
+              <Heading as="h1" size="lg" mr={"4"}>
                 🛒 Aucto
               </Heading>
             </Link>
@@ -96,7 +96,7 @@ export default function Header() {
           />
           <Button
             rightIcon={<ArrowRightIcon />}
-            colorScheme="pink"
+            bgColor={"blue.400"}
             variant="solid"
           >
             Login
@@ -278,12 +278,9 @@ const NAV_ITEMS: Array<NavItem> = [
     label: "Home",
     href: "/",
   },
-  {
-    label: "About",
-    href: "/about",
-  },
+
   {
     label: "Auctions",
-    href: "/auctions",
+    href: "#all_products",
   },
 ];

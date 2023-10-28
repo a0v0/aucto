@@ -1,6 +1,8 @@
-import { Flex, SimpleGrid, Wrap, WrapItem } from "@chakra-ui/react";
+import { Flex, Heading, Spacer, Wrap, WrapItem } from "@chakra-ui/react";
 import { BidData } from "lib/constants";
 import BidCard from "./components/BidCard";
+import HowItWorks from "./components/HowItWorks";
+import Hero from "./components/hero";
 
 const Home = () => {
   return (
@@ -13,9 +15,27 @@ const Home = () => {
       mb={8}
       w="full"
     >
-      {/* <SomeText />
-      <SomeImage />
-      <CTASection /> */}
+      <Hero />
+      <Spacer />
+      <Spacer />
+      <Spacer />
+      <Spacer />
+      <Spacer />
+      <Spacer />
+      <Spacer />
+      <Spacer />
+      <Spacer />
+      <Spacer />
+      <HowItWorks />
+      <Spacer />
+      <Spacer />
+      <Spacer />
+      <Spacer />
+      <Spacer />
+
+      <Heading id="all_products" size={"4xl"}>
+        All Products
+      </Heading>
       <Wrap spacing="30px" justify="center">
         {BidData.map((bid) => (
           <WrapItem>

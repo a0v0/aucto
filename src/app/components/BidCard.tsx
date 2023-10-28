@@ -17,7 +17,7 @@ import { ProductDetailsProps } from "./ProductDetails";
 
 export default function BidtaCard(data: ProductDetailsProps) {
   return (
-    <Link style={{ textDecoration: "none" }} href={"/auctions/" + data.slug}>
+    <Link style={{ textDecoration: "none" }} href={"/bid/" + data.slug}>
       <Box
         role={"group"}
         p={6}
