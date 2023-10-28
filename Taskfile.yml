@@ -12,3 +12,8 @@ tasks:
     desc: Start the server
     cmds:
       - pnpm dev
+
+  build:
+    desc: Build the project
+    cmds:
+      - pnpm build
