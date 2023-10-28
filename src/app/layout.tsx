@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
-import Providers from "~/app/providers";
-import Layout from "~/lib/layout";
-import { APP_NAME, SITE_URL } from "../../constants";
+
+import Layout from "lib/layout";
+import { APP_NAME, SITE_URL } from "../lib/constants";
+import Providers from "./providers";
 
 export const metadata: Metadata = {
   title: APP_NAME + " | #1 Auction Site",

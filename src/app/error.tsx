@@ -1,19 +1,16 @@
 "use client";
-
 import {
   Box,
   Button,
   Flex,
   Heading,
   Image,
-  Text,
   useColorMode,
 } from "@chakra-ui/react";
+import MotionBox from "lib/components/motion/Box";
 import Link from "next/link";
 
-import MotionBox from "~/lib/components/motion/Box";
-
-const Page404 = () => {
+const Page500 = () => {
   const { colorMode } = useColorMode();
 
   return (
@@ -25,14 +22,14 @@ const Page404 = () => {
         margin="0 auto"
       >
         <Image
-          src="/404 Error-pana.svg"
-          alt="Error 404 not found Illustration"
+          src="/Under construction-amico.svg"
+          alt="Error 500 Illustration"
         />
       </MotionBox>
 
       <Box marginY={4}>
         <Heading textAlign="center" size="lg">
-          Page not Found.
+          Oops! Something went wrong at our end 🙇‍♂️.
         </Heading>
 
         <Box textAlign="center" marginTop={4}>
@@ -50,4 +47,4 @@ const Page404 = () => {
   );
 };
 
-export default Page404;
+export default Page500;

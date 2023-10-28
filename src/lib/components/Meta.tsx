@@ -1,4 +1,4 @@
-const APP_NAME = 'nextarter-chakra';
+import { APP_NAME } from "../constants";
 
 const Meta = () => {
   return (

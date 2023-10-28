@@ -26,7 +26,7 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 import { RiGithubFill, RiGithubLine } from "react-icons/ri";
-import { GITHUB_REPO } from "../../../constants";
+import { GITHUB_REPO } from "../constants";
 import ThemeToggle from "./ThemeToggle";
 
 export default function Header() {
