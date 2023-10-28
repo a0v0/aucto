@@ -25,6 +25,7 @@ import {
   useColorModeValue,
   useDisclosure,
 } from "@chakra-ui/react";
+import Link from "next/link";
 import { RiGithubFill, RiGithubLine } from "react-icons/ri";
 import { GITHUB_REPO } from "../constants";
 import ThemeToggle from "./ThemeToggle";
@@ -59,8 +60,6 @@ export default function Header() {
             variant={"ghost"}
             aria-label={"Toggle Navigation"}
           />
-        </Flex>
-        <Flex flex={{ base: 1 }} justify={{ base: "center", md: "start" }}>
           <Text
             textAlign={useBreakpointValue({ base: "center", md: "left" })}
             fontFamily={"heading"}
@@ -70,8 +69,15 @@ export default function Header() {
               🛒 Aucto
             </Heading>
           </Text>
-
+        </Flex>
+        <Flex flex={{ base: 1 }} justify={{ base: "center", md: "start" }}>
           <Flex display={{ base: "none", md: "flex" }} ml={10}>
+            <Link href={"/"}>
+              <Heading as="h1" size="lg" mr={"4"}>
+                🛒 Aucto
+              </Heading>
+            </Link>
+
             <DesktopNav />
           </Flex>
         </Flex>
@@ -111,7 +117,7 @@ const DesktopNav = () => {
   const popoverContentBgColor = useColorModeValue("white", "gray.800");
 
   return (
-    <Stack direction={"row"} spacing={4}>
+    <Stack direction={"row"} alignItems={"center"} spacing={4}>
       {NAV_ITEMS.map((navItem) => (
         <Box key={navItem.label}>
           <Popover trigger={"hover"} placement={"bottom-start"}>

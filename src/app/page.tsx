@@ -1,4 +1,4 @@
-import { Flex, SimpleGrid } from "@chakra-ui/react";
+import { Flex, SimpleGrid, Wrap, WrapItem } from "@chakra-ui/react";
 import { BidData } from "lib/constants";
 import BidCard from "./components/BidCard";
 
@@ -16,11 +16,13 @@ const Home = () => {
       {/* <SomeText />
       <SomeImage />
       <CTASection /> */}
-      <SimpleGrid columns={3} spacing={10}>
+      <Wrap spacing="30px" justify="center">
         {BidData.map((bid) => (
-          <BidCard {...bid} />
+          <WrapItem>
+            <BidCard {...bid} />
+          </WrapItem>
         ))}
-      </SimpleGrid>
+      </Wrap>
     </Flex>
   );
 };
