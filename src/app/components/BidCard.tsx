@@ -86,7 +86,7 @@ export default function BidtaCard(data: ProductDetailsProps) {
                 textAlign={"left"}
                 fontSize={"16px"}
               >
-                ${data.currentBid} (USD)
+                {data.currentBid} (USD)
               </Text>
             </Stack>
             <Divider

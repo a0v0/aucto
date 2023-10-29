@@ -1,20 +1,16 @@
-export interface ProductDetailsProps {
+export interface ProductDataProps {
   images: string[];
   name: string;
-  currentBid: string;
+  currentBid: number;
   endsInHours: number;
   description: string;
   ratings: number;
   activeBids: number;
   watchers: number;
   totalBids: number;
+  reviews: number;
+  bidIncrementBy: number;
   //   key value pair for details
   details: Record<string, string>;
   slug: string;
 }
-
-function ProductDetails() {
-  return <div>ProductDetails</div>;
-}
-
-export default ProductDetails;

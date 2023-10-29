@@ -1,5 +1,5 @@
 import { Flex, Heading, Spacer, Wrap, WrapItem } from "@chakra-ui/react";
-import { BidData } from "lib/constants";
+import { ProductData } from "lib/constants";
 import BidCard from "./components/BidCard";
 import HowItWorks from "./components/HowItWorks";
 import Hero from "./components/hero";
@@ -37,7 +37,7 @@ const Home = () => {
         All Products
       </Heading>
       <Wrap spacing="30px" justify="center">
-        {BidData.map((bid) => (
+        {ProductData.map((bid) => (
           <WrapItem>
             <BidCard {...bid} />
           </WrapItem>

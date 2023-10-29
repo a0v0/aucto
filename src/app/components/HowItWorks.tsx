@@ -49,7 +49,7 @@ const Card = ({ heading, description, icon, href }: CardProps) => {
         </Flex>
         <Box mt={2}>
           <Heading size="md">{heading}</Heading>
-          <Text mt={1} fontSize={"sm"}>
+          <Text mt={1} fontSize={"lg"}>
             {description}
           </Text>
         </Box>
