@@ -52,7 +52,7 @@ function ProductInfoPanel(property: productInfoPanelProps) {
                 noOfLines={1}
                 color={"pink.500"}
               >
-                ${property.price}
+                ${bidPrice}
               </Box>
             </WrapItem>
             <WrapItem>
@@ -75,7 +75,17 @@ function ProductInfoPanel(property: productInfoPanelProps) {
             </WrapItem>
           </Wrap>
         </Box>
-
+        <Box
+          mt="1"
+          fontWeight="semibold"
+          as="h2"
+          fontSize={"1xl"}
+          lineHeight="tight"
+          color={"gray"}
+          noOfLines={1}
+        >
+          Base Price: ${property.price}
+        </Box>
         <Box
           mt="1"
           fontWeight="semibold"
@@ -87,6 +97,7 @@ function ProductInfoPanel(property: productInfoPanelProps) {
         >
           Bid Increment: ${property.bidIncrementBy}
         </Box>
+
         <Box
           mt="1"
           fontWeight="semibold"

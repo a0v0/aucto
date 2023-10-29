@@ -13,9 +13,10 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import Countdown from "react-countdown";
-import { ProductDetailsProps } from "./ProductDetails";
 
-export default function BidtaCard(data: ProductDetailsProps) {
+import { ProductDataProps } from "lib/types/product";
+
+export default function BidtaCard(data: ProductDataProps) {
   return (
     <Link style={{ textDecoration: "none" }} href={"/bid/" + data.slug}>
       <Box
