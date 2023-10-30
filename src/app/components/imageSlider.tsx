@@ -1,75 +1,48 @@
 "use client";
 
-import { StarIcon } from "@chakra-ui/icons";
-import { Badge, Box, Image } from "@chakra-ui/react";
+import { Box, Center, Grid, GridItem, Image } from "@chakra-ui/react";
 import { useState } from "react";
 
-export function ImageSlider() {
-  const [currentImage, setCurrentImage] = useState("");
-
-  const property = {
-    imageUrl: "https://bit.ly/2Z4KKcF",
-    imageAlt: "Rear view of modern home with pool",
-    beds: 3,
-    baths: 2,
-    title: "Modern home in city center in the heart of historic Los Angeles",
-    formattedPrice: "$1,900.00",
-    reviewCount: 34,
-    rating: 4,
-  };
+export function ImageSlider({ images }: { images: string[] }) {
+  const [currentImage, setCurrentImage] = useState(images[0]);
 
   return (
-    <Box maxW="lg" borderWidth="2px" borderRadius="lg" overflow="hidden">
-      <Image src={property.imageUrl} alt={property.imageAlt} />
-
-      <Box p="6">
-        <Box display="flex" alignItems="baseline">
-          <Badge borderRadius="full" px="2" colorScheme="teal">
-            New
-          </Badge>
-          <Box
-            color="gray.500"
-            fontWeight="semibold"
-            letterSpacing="wide"
-            fontSize="xs"
-            textTransform="uppercase"
-            ml="2"
-          >
-            {property.beds} beds &bull; {property.baths} baths
-          </Box>
-        </Box>
-
-        <Box
-          mt="1"
-          fontWeight="semibold"
-          as="h4"
-          lineHeight="tight"
-          noOfLines={1}
+    <Box borderRadius={"lg"} maxW={"512px"} borderWidth={"2px"}>
+      <Image
+        w={"512px"}
+        textAlign={"center"}
+        objectFit={"cover"}
+        height={"408px"}
+        src={currentImage}
+      />
+      <Center>
+        <Grid
+          padding={2}
+          templateColumns={"repeat(" + images.length + ", 1fr)"}
+          gap={3}
+          overflow={"hidden"}
         >
-          {property.title}
-        </Box>
-
-        <Box>
-          {property.formattedPrice}
-          <Box as="span" color="gray.600" fontSize="sm">
-            / wk
-          </Box>
-        </Box>
-
-        <Box display="flex" mt="2" alignItems="center">
-          {Array(5)
-            .fill("")
-            .map((_, i) => (
-              <StarIcon
-                key={i}
-                color={i < property.rating ? "teal.500" : "gray.300"}
-              />
-            ))}
-          <Box as="span" ml="2" color="gray.600" fontSize="sm">
-            {property.reviewCount} reviews
-          </Box>
-        </Box>
-      </Box>
+          {images.map((image) => (
+            <GridItem
+              borderWidth={"3px"}
+              borderRadius={"25px"}
+              cursor={"pointer"}
+              _hover={{
+                borderColor: "blue.500",
+                transition: "0.5s",
+                transform: "scale(1.1)",
+              }}
+              borderColor={currentImage === image ? "blue.500" : "gray.200"}
+              key={image}
+              w="100px"
+              h="80px"
+              backgroundSize={"cover"}
+              backgroundImage={image}
+              onClick={() => setCurrentImage(image)}
+            ></GridItem>
+          ))}
+        </Grid>
+      </Center>
     </Box>
   );
 }

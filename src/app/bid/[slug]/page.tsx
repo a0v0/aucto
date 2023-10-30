@@ -1,4 +1,4 @@
-import { Wrap, WrapItem } from "@chakra-ui/react";
+import { Box, Wrap, WrapItem } from "@chakra-ui/react";
 import { ImageSlider } from "app/components/imageSlider";
 import ProductInfoPanel from "app/components/productInfoPanel";
 import { ProductData } from "lib/constants";
@@ -10,13 +10,13 @@ function Page({ params }: { params: { slug: string } }) {
     postData = {
       activeBids: 0,
       bidIncrementBy: 0,
-      currentBid: 0,
+      basePrice: 0,
       description: "",
       details: [],
       ratings: 0,
       images: [],
       endsInHours: 0,
-      name: "",
+      productName: "",
       reviews: 0,
       slug: "",
       totalBids: 0,
@@ -24,19 +24,12 @@ function Page({ params }: { params: { slug: string } }) {
     };
   }
   return (
-    <Wrap justify={"center"}>
+    <Wrap spacing={"30px"} align={"center"} ml={0} justify={"center"}>
       <WrapItem>
-        <ImageSlider />
+        <ImageSlider images={postData.images} />
       </WrapItem>
       <WrapItem>
-        <ProductInfoPanel
-          price={postData.currentBid}
-          title={postData.name}
-          rating={postData.ratings}
-          reviewCount={postData.reviews}
-          details={postData.details}
-          bidIncrementBy={postData.bidIncrementBy}
-        />
+        <ProductInfoPanel property={postData} />
       </WrapItem>
     </Wrap>
   );

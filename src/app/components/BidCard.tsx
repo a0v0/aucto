@@ -5,7 +5,6 @@ import {
   Button,
   Center,
   Divider,
-  Heading,
   Image,
   Link,
   Stack,
@@ -28,10 +27,10 @@ export default function BidtaCard(data: ProductDataProps) {
           transform: "translateY(6px)",
           transition: "all 0.5s ease ",
         }}
-        maxW={"500px"}
-        w={""}
+        w={"350px"}
         bg={useColorModeValue("white", "gray.800")}
         boxShadow={"xl"}
+        borderWidth={"4px"}
         rounded={"12px"}
         // border={"1px solid #e2e8f0"}
         pos={"relative"}
@@ -70,14 +69,16 @@ export default function BidtaCard(data: ProductDataProps) {
 
         <Stack pt={10} align={"center"}>
           <Divider variant={"dashed"} />
-          <Heading
-            _groupHover={{ textDecoration: "underline" }}
-            fontSize={"l"}
-            fontFamily={"body"}
-            fontWeight={500}
+          <Box
+            mt="1"
+            fontWeight="semibold"
+            as="h2"
+            fontSize={"1xl"}
+            lineHeight="tight"
+            noOfLines={1}
           >
-            {data.name}
-          </Heading>
+            {data.productName}
+          </Box>
           <Stack direction={"row"} align={"center"} gap={8}>
             <Stack direction={"column"}>
               <Text>Current Bid:</Text>
@@ -87,7 +88,7 @@ export default function BidtaCard(data: ProductDataProps) {
                 textAlign={"left"}
                 fontSize={"16px"}
               >
-                {data.currentBid} (USD)
+                ${data.basePrice}
               </Text>
             </Stack>
             <Divider

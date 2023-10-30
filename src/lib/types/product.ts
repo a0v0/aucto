@@ -1,7 +1,7 @@
 export interface ProductDataProps {
   images: string[];
-  name: string;
-  currentBid: number;
+  productName: string;
+  basePrice: number;
   endsInHours: number;
   description: string;
   ratings: number;

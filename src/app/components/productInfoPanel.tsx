@@ -1,6 +1,7 @@
 "use client";
 import { StarIcon } from "@chakra-ui/icons";
 import {
+  Avatar,
   Box,
   Button,
   Container,
@@ -12,25 +13,19 @@ import {
   ModalFooter,
   ModalHeader,
   ModalOverlay,
+  Tag,
+  TagLabel,
   Text,
   Wrap,
   WrapItem,
   useDisclosure,
 } from "@chakra-ui/react";
-import { detailsProps } from "lib/types/product";
+import { ProductDataProps } from "lib/types/product";
 import { useState } from "react";
+import Countdown from "react-countdown";
 
-interface productInfoPanelProps {
-  title: string;
-  price: number;
-  rating: number;
-  reviewCount: number;
-  bidIncrementBy: number;
-  details: detailsProps[];
-}
-
-function ProductInfoPanel(property: productInfoPanelProps) {
-  const [bidPrice, setBidPrice] = useState(property.price);
+function ProductInfoPanel({ property }: { property: ProductDataProps }) {
+  const [bidPrice, setBidPrice] = useState(property.basePrice);
   const [bidCount, setBidCount] = useState(1);
   const { isOpen, onOpen, onClose } = useDisclosure();
 
@@ -84,11 +79,10 @@ function ProductInfoPanel(property: productInfoPanelProps) {
             as="h1"
             fontSize={"2xl"}
             lineHeight="tight"
-            noOfLines={1}
+            // noOfLines={1}
           >
-            {property.title}
+            {property.productName}
           </Box>
-
           {/* Price */}
           <Box display={"flex"}>
             <Wrap>
@@ -112,21 +106,98 @@ function ProductInfoPanel(property: productInfoPanelProps) {
                     .map((_, i) => (
                       <StarIcon
                         key={i}
-                        color={i < property.rating ? "blue.400" : "gray.300"}
+                        color={i < property.ratings ? "blue.400" : "gray.300"}
                       />
                     ))}
                   <Box as="span" ml="2" color="gray.600" fontSize="sm">
-                    {property.rating} ratings
+                    {property.ratings} ratings
                   </Box>
                   <Box as="span" ml="2" color="gray.600" fontSize="sm">
-                    {property.reviewCount} reviews
+                    {property.reviews} reviews
                   </Box>
                 </Box>
               </WrapItem>
             </Wrap>
           </Box>
+          <Tag size="lg" colorScheme="pink" borderRadius="full" mr={"10px"}>
+            <Avatar
+              objectFit={"contain"}
+              src="/bid1.png"
+              size="xs"
+              name=""
+              ml={-1}
+              mr={2}
+            />
+            <TagLabel>{property.activeBids} Active Bidders</TagLabel>
+          </Tag>
+          <Tag size="lg" colorScheme="green" mr={"10px"} borderRadius="full">
+            <Avatar
+              objectFit={"contain"}
+              src="/bid2.png"
+              size="xs"
+              name=""
+              ml={-1}
+              mr={2}
+            />
+            <TagLabel>{property.watchers} Watching</TagLabel>
+          </Tag>
+          <Tag size="lg" colorScheme="purple" borderRadius="full">
+            <Avatar
+              objectFit={"contain"}
+              src="/bid3.png"
+              size="xs"
+              name=""
+              ml={-1}
+              mr={2}
+            />
+            <TagLabel>{property.totalBids} Total Bids</TagLabel>
+          </Tag>
+          <Wrap display={"flex"}>
+            <WrapItem>
+              <Box
+                mt="1"
+                fontWeight="semibold"
+                color={"gray"}
+                fontSize={"2xl"}
+                lineHeight="tight"
+                // noOfLines={1}
+              >
+                Auction ends in
+              </Box>
+            </WrapItem>{" "}
+            <WrapItem>
+              <Box
+                mt="1"
+                fontWeight="semibold"
+                color={"red"}
+                fontSize={"2xl"}
+                lineHeight="tight"
+                // noOfLines={1}
+              >
+                {
+                  <Countdown
+                    daysInHours={true}
+                    date={Date.now() + property.endsInHours * 3600000}
+                    precision={3}
+                  />
+                }
+              </Box>
+            </WrapItem>
+          </Wrap>
 
           <Divider m={"10px"} />
+          <Container
+            margin={0}
+            p={0}
+            mb={"10px"}
+            fontWeight="semibold"
+            as="h2"
+            fontSize={"1xl"}
+            color={"gray.500"}
+            width={"auto"}
+          >
+            {property.description}
+          </Container>
           {property.details.map((item) => (
             <Container
               key={item.key}
@@ -150,7 +221,7 @@ function ProductInfoPanel(property: productInfoPanelProps) {
             // lineHeight="tight"
             color={"gray.500"}
           >
-            <Box>Base Price: ${property.price}</Box>
+            <Box>Base Price: ${property.basePrice}</Box>
             <Box>Bid Increment: ${property.bidIncrementBy}</Box>
             <Box>Final Bid Price: ${bidPrice}</Box>
           </Box>
