@@ -12,7 +12,7 @@ function Page({ params }: { params: { slug: string } }) {
       bidIncrementBy: 0,
       currentBid: 0,
       description: "",
-      details: {},
+      details: [],
       ratings: 0,
       images: [],
       endsInHours: 0,
@@ -34,6 +34,7 @@ function Page({ params }: { params: { slug: string } }) {
           title={postData.name}
           rating={postData.ratings}
           reviewCount={postData.reviews}
+          details={postData.details}
           bidIncrementBy={postData.bidIncrementBy}
         />
       </WrapItem>

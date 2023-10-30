@@ -11,6 +11,11 @@ export interface ProductDataProps {
   reviews: number;
   bidIncrementBy: number;
   //   key value pair for details
-  details: Record<string, string>;
+  details: detailsProps[];
   slug: string;
+}
+
+export interface detailsProps {
+  key: string;
+  value: string;
 }
