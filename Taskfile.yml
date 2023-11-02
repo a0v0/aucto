@@ -3,6 +3,7 @@ tasks:
   default:
     cmds:
       - task -a
+      
   install:
     desc: Install Dependencies
     cmds:
