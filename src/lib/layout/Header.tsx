@@ -94,13 +94,15 @@ export default function Header() {
             icon={colorMode === "light" ? <RiGithubFill /> : <RiGithubLine />}
             onClick={() => open(GITHUB_REPO, "_blank")}
           />
-          <Button
-            rightIcon={<ArrowRightIcon />}
-            bgColor={"blue.400"}
-            variant="solid"
-          >
-            Login
-          </Button>
+          <Link href="/register">
+            <Button
+              rightIcon={<ArrowRightIcon />}
+              bgColor={"blue.400"}
+              variant="solid"
+            >
+              Login
+            </Button>
+          </Link>
         </Stack>
       </Flex>
 
