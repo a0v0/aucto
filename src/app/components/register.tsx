@@ -73,7 +73,7 @@ export default function RegisterPage() {
                   _hover={{
                     bg: "blue.500",
                   }}
-                  onClick={() => window.alert("🫡 Successfully Registerd...")}
+                  onClick={() => window.alert("🫡 Login Successful...")}
                 >
                   Log In
                 </Button>
