@@ -96,6 +96,15 @@ export default function Header() {
           />
           <Link href="/register">
             <Button
+              // rightIcon={<ArrowRightIcon />}
+              // bgColor={"blue.400"}
+              variant="solid"
+            >
+              Register
+            </Button>
+          </Link>{" "}
+          <Link href="/login">
+            <Button
               rightIcon={<ArrowRightIcon />}
               bgColor={"blue.400"}
               variant="solid"
